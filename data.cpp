@@ -45,19 +45,36 @@ unsigned long data::toLinkSize(unsigned long i) {
 }
 
 std::set<std::string> data::toLink(unsigned long i) {
-    return onionDomainVector.at(i).toLink;
+    if (validateIndex(i)){
+        return onionDomainVector.at(i).toLink;
+    } else{
+        return std::set<std::string> ();
+    }
 }
 
 std::set<std::string> data::toDomain(unsigned long i) {
-    return onionDomainVector.at(i).toLink;
+    if (validateIndex(i)){
+        return onionDomainVector.at(i).toLink;
+    } else{
+        return std::set<std::string> ();
+    }
 }
 
 std::string data::domain(unsigned long i) {
-    return onionDomainVector.at(i).domain;
+    if (validateIndex(i)){
+        return onionDomainVector.at(i).domain;
+    } else{
+        return std::string();
+    }
 }
 
 int data::domainStatus (unsigned long i){
-    return onionDomainVector.at(i).status;
+    if (validateIndex(i)){
+        return onionDomainVector.at(i).status;
+    } else{
+        return 0;
+    }
+
 }
 
 bool my_cmp(const data::onionDomain & a, const data::onionDomain & b){
