@@ -7,6 +7,4 @@ public:
     static void loadAndExtract(data& datastore , const std::string& url);
 };
 
-
-
 #endif //TORFISHER_LOAD_H
