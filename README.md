@@ -19,7 +19,7 @@ Options:
 ## Example of a seed file 
  
 ```console
-[me@server]$ cat seedFile.txt 
+[me@server]$ cat SeedFile.txt 
 zqktlwi4fecvo6ri.onion
 3g2upl4pq6kufc4m.onion
 ...
@@ -30,7 +30,7 @@ zqktlwi4fecvo6ri.onion
 ## Start the program with the seed file [mandatory]
 
 ```console
-me@server]$ ./TorFisher -s seedFile.txt
+me@server]$ ./TorFisher -s SeedFile.txt
 10-05-20 20:00:24 [INFO] TorFisher START 
 10-05-20 20:00:24 [INFO] |- Seed (-s): SeedFile.txt
 10-05-20 20:00:24 [INFO] |- Log (-l): TorFisher.log
