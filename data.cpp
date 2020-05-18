@@ -109,9 +109,13 @@ bool data::validateIndex(unsigned long i) {
 }
 
 std::vector<std::string> data::randomToLink(unsigned long i) {
-    std::set<std::string> in = onionDomainVector.at(i).toLink;
-    std::vector<std::string> out;
-    std::sample(in.begin(), in.end(), std::back_inserter(out),
-                config::linkLimit, std::mt19937{std::random_device{}()});
-    return out;
+    if (validateIndex(i)){
+        std::set<std::string> in = onionDomainVector.at(i).toLink;
+        std::vector<std::string> out;
+        std::sample(in.begin(), in.end(), std::back_inserter(out),
+                    config::linkLimit, std::mt19937{std::random_device{}()});
+        return out;
+    } else{
+        return std::vector<std::string>();
+    }
 }
